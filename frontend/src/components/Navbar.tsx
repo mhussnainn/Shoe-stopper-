@@ -191,7 +191,7 @@ const Navbar = () => {
 
         {/* Mobile Nav Dropdown */}
         {mobileNavOpen && (
-          <div className="md:hidden py-4 border-t border-border bg-white">
+          <div className="md:hidden py-4 border-t border-border bg-blue">
             <div className="flex flex-col space-y-3">
               <Link to="/" onClick={() => setMobileNavOpen(false)} className="px-2 py-2 hover:bg-muted rounded-lg">
                 Home
