@@ -1,12 +1,19 @@
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { products } from '../data/product'; // adjust path as needed
+import { products } from '../data/product';
+import { useCart } from '../context/CartContext';
+import { useToast } from '../components/ui/use-toast'; // adjust path if needed
+
 
 const ProductDetail = () => {
   const { id } = useParams();
+  const { addToCart } = useCart();
+  const { toast } = useToast();
+
   const [selectedSize, setSelectedSize] = useState('');
 
-  const product = products.find(p => p.id === id);
+  // Convert id to number if your product ids are numbers
+  const product = products.find(p => String(p.id) === id);
 
   if (!product) {
     return (
@@ -17,9 +24,23 @@ const ProductDetail = () => {
   }
 
   const handleAddToCart = () => {
-    console.log('Added to cart:', { id, selectedSize });
-    // TODO: Connect to cart logic or API
+    if (!selectedSize) return;
+  
+    addToCart({
+      id: product.id,
+      name: product.name,
+      image: product.image,
+      price: product.price,
+      size: selectedSize,
+      quantity: 1,
+    });
+  
+    toast({
+      title: 'Added to Cart',
+      description: `${product.name} (Size ${selectedSize}) was added to your cart.`,
+    });
   };
+  
 
   return (
     <div className="min-h-screen pt-20 pb-20 mt-10">
@@ -41,7 +62,6 @@ const ProductDetail = () => {
                 {product.name}
               </h1>
               <p className="text-3xl font-bold text-primary mb-6">Rs.{product.price}</p>
-              
             </div>
 
             {/* Size Selection */}
@@ -78,7 +98,7 @@ const ProductDetail = () => {
               </Link>
             </div>
 
-            {/* Add to Cart */}
+            {/* Add to Cart Button */}
             <button
               onClick={handleAddToCart}
               disabled={!selectedSize}
