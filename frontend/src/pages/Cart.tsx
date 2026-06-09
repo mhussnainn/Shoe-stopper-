@@ -7,7 +7,7 @@ const Cart = () => {
   const { cartItems, updateQuantity } = useCart();
 
   const subtotal = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-  const shipping = 15;
+  const shipping = 0;
   const total = subtotal + shipping;
 
   return (
@@ -41,7 +41,7 @@ const Cart = () => {
                     </div>
                     <div className="text-center">
                       <p className="text-sm md:text-lg font-bold text-primary mb-2">
-                        ${item.price}
+                        Rs.{item.price}
                       </p>
                       <div className="flex items-center space-x-2 md:space-x-3">
                         <button onClick={() => updateQuantity(item.id, item.quantity - 1)} className="w-7 h-7 md:w-8 md:h-8 rounded-full glass-effect flex items-center justify-center hover-scale">-</button>
@@ -57,10 +57,10 @@ const Cart = () => {
             <div className="glass-effect rounded-xl p-5 md:p-6 h-fit neon-glow">
               <h2 className="text-xl md:text-2xl font-bold mb-5 md:mb-6 funky-text-gradient">Order Summary</h2>
               <div className="space-y-3 md:space-y-4 mb-5 md:mb-6 text-sm md:text-base">
-                <div className="flex justify-between"><span>Subtotal</span><span>${subtotal}</span></div>
-                <div className="flex justify-between"><span>Shipping</span><span>${shipping}</span></div>
+                <div className="flex justify-between"><span>Subtotal</span><span>Rs.{subtotal}</span></div>
+                <div className="flex justify-between"><span>Shipping</span><span>Rs.{shipping}</span></div>
                 <div className="border-t border-border pt-3">
-                  <div className="flex justify-between text-lg md:text-xl font-bold"><span>Total</span><span className="text-primary">${total}</span></div>
+                  <div className="flex justify-between text-lg md:text-xl font-bold"><span>Total</span><span className="text-primary">Rs.{total}</span></div>
                 </div>
               </div>
               <Link to="/checkout" className="block w-full py-3 md:py-4 bg-primary text-primary-foreground rounded-xl font-semibold text-sm md:text-lg hover-scale neon-glow transition-all mb-4 text-center">Proceed to Checkout</Link>

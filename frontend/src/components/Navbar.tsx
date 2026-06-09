@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ShoppingCart, Home, Search, X } from 'lucide-react';
-import Logo from '../../public/assets/WhatsApp Image 2025-06-18 at 7.58.08 PM.jpeg';
 import { products } from '../data/product';
+
+const Logo = '/assets/Logo.jpeg';
 
 const navLinks = [
   { to: '/',                    label: 'Home',      icon: true },
@@ -163,7 +164,7 @@ const Navbar = () => {
                         className="w-full px-4 py-3 text-left hover:bg-muted transition-colors border-b border-border last:border-b-0 flex justify-between items-center"
                       >
                         <span className="font-medium text-sm">{product.name}</span>
-                        <span className="text-sm text-primary font-semibold">${product.price}</span>
+                        <span className="text-sm text-primary font-semibold text-white">Rs.{product.price}</span>
                       </button>
                     ))}
                   </div>

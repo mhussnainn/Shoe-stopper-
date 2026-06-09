@@ -280,7 +280,7 @@ const Home = () => {
               <span ref={headWord6Ref} className="tech-text-gradient inline-block">Imagine.</span>
             </h2>
             <p ref={customizeSubRef} className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              No catalogue. No compromise. Every pair we make is designed around one person — you.
+              No catalogue. No compromise. Every pair we make is designed around one person you.
               Tell us what you want and we handle everything from materials to finishing.
             </p>
           </div>

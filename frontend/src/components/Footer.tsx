@@ -94,7 +94,7 @@ const Footer = () => {
 
         <div className="border-t border-border mt-8 pt-8 text-center">
           <p className="text-slate-300">
-            © 2024 ShoeStopper. All rights reserved. | Cash on Delivery Available
+            © 2026 ShoeStopper. All rights reserved. | Cash on Delivery Available
           </p>
         </div>
       </div>
