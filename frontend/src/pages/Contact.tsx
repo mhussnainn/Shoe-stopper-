@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle, MessageSquare, Users, Award, Globe } from 'lucide-react';
@@ -364,10 +365,10 @@ const Contact = () => {
               </div>
 
               <div className="text-center">
-                <a href="/about" className="inline-flex items-center gap-2 px-8 py-4 glass-effect rounded-2xl font-bold hover-scale transition-all border border-primary/30 text-sm group">
+                <Link to="/about" className="inline-flex items-center gap-2 px-8 py-4 glass-effect rounded-2xl font-bold hover-scale transition-all border border-primary/30 text-sm group">
                   Read Our Full Story
                   <span className="text-primary transition-transform group-hover:translate-x-1 duration-200">→</span>
-                </a>
+                </Link>
               </div>
             </div>
           </div>

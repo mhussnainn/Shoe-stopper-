@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { FluidSimulation } from '../components/FluidSimulationNew';
@@ -472,8 +473,8 @@ const About = () => {
                 Browse the collection or open the 3D builder and design something entirely your own. Either way it will be unmistakably yours.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="/products" className="px-10 py-4 bg-primary text-primary-foreground rounded-2xl font-bold hover-scale neon-glow transition-all text-base">Explore Collection</a>
-                <a href="/customize" className="px-10 py-4 glass-effect rounded-2xl font-bold hover-scale transition-all border-2 border-secondary text-base animate-float">Start Customizing</a>
+                <Link to="/products" className="px-10 py-4 bg-primary text-primary-foreground rounded-2xl font-bold hover-scale neon-glow transition-all text-base">Explore Collection</Link>
+                <Link to="/customize" className="px-10 py-4 glass-effect rounded-2xl font-bold hover-scale transition-all border-2 border-secondary text-base animate-float">Start Customizing</Link>
               </div>
             </div>
           </div>

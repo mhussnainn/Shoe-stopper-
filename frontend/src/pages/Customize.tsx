@@ -7,6 +7,7 @@ import { Upload, X, RefreshCw, Zap, Shield, Palette, Ruler, Star, MessageSquare 
 import { FluidSimulation } from '../components/FluidSimulationNew';
 import { useCart } from '../context/CartContext';
 import { useToast } from '../components/ui/use-toast';
+import { Link } from 'react-router-dom';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -443,8 +444,8 @@ const Customize = () => {
                 Have a specific vision? Share a reference image or describe what you want and we will guide you through every decision — material, color, fit, everything.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="/contact" className="px-10 py-4 bg-primary text-primary-foreground rounded-2xl font-bold hover-scale neon-glow transition-all text-base">Talk to a Designer</a>
-                <a href="/products" className="px-10 py-4 glass-effect rounded-2xl font-bold hover-scale transition-all border-2 border-secondary text-base animate-float">Browse Catalogue</a>
+                <Link to="/contact" className="px-10 py-4 bg-primary text-primary-foreground rounded-2xl font-bold hover-scale neon-glow transition-all text-base">Talk to a Designer</Link>
+                <Link to="/products" className="px-10 py-4 glass-effect rounded-2xl font-bold hover-scale transition-all border-2 border-secondary text-base animate-float">Browse Catalogue</Link>
               </div>
             </div>
           </div>

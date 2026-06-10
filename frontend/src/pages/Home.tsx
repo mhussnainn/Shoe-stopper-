@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
 import { products } from '../data/product';
 import gsap from 'gsap';
@@ -229,8 +230,8 @@ const Home = () => {
             Express your unique style with limitless customization possibilities.
           </p>
           <div ref={heroButtonsRef} className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
-            <a href="/products"  className="px-8 sm:px-10 py-4 sm:py-5 bg-primary text-primary-foreground rounded-2xl font-bold hover-scale neon-glow transition-all animate-pulse-glow text-base sm:text-lg">Explore Collection</a>
-            <a href="/customize" className="px-8 sm:px-10 py-4 sm:py-5 glass-effect rounded-2xl font-bold hover-scale transition-all border-2 border-secondary text-base sm:text-lg animate-float">Start Customizing</a>
+            <Link to="/products" className="px-8 sm:px-10 py-4 sm:py-5 bg-primary text-primary-foreground rounded-2xl font-bold hover-scale neon-glow transition-all animate-pulse-glow text-base sm:text-lg">Explore Collection</Link>
+            <Link to="/customize" className="px-8 sm:px-10 py-4 sm:py-5 glass-effect rounded-2xl font-bold hover-scale transition-all border-2 border-secondary text-base sm:text-lg animate-float">Start Customizing</Link>
           </div>
         </div>
 
@@ -317,9 +318,9 @@ const Home = () => {
 
           {/* CTA */}
           <div className="flex justify-center">
-            <a
+            <Link
               ref={customizeCtaRef}
-              href="/customize"
+              to="/customize"
               className="cta-customize-btn group relative inline-flex items-center justify-center gap-3 px-10 sm:px-16 py-4 sm:py-5 rounded-2xl font-black text-base sm:text-lg text-white overflow-hidden"
               style={{ isolation: 'isolate', minWidth: 'min(300px, 90vw)' }}
             >
@@ -327,7 +328,7 @@ const Home = () => {
               <span aria-hidden="true" className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ boxShadow: '0 0 0 3px rgba(var(--primary-rgb,124,58,237),0.55), 0 0 40px 8px rgba(var(--primary-rgb,124,58,237),0.35)', zIndex: 0 }} />
               <span className="relative z-10 tracking-wide text-white">Customize Your Shoes</span>
               <span className="relative z-10 inline-flex items-center justify-center w-8 h-8 rounded-full bg-white/25 group-hover:bg-white/40 group-hover:translate-x-1.5 transition-all duration-300 text-white font-bold text-sm">→</span>
-            </a>
+            </Link>
           </div>
 
         </div>
@@ -373,7 +374,7 @@ const Home = () => {
       <section ref={categoriesSectionRef} className="py-16 sm:py-20 relative z-10">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-            <a href="/products?category=men" className="group" ref={(el) => { categoryCardRefs.current[0] = el; }}>
+            <Link to="/products?category=men" className="group" ref={(el) => { categoryCardRefs.current[0] = el; }}>
               <div className="glass-effect rounded-2xl p-8 sm:p-12 hover-scale transition-all h-60 sm:h-80 flex items-center justify-center relative overflow-hidden">
                 <div className="text-center z-10">
                   <h3 className="text-4xl sm:text-5xl font-bold mb-4 sm:mb-6 tech-text-gradient">Men&apos;s</h3>
@@ -381,8 +382,8 @@ const Home = () => {
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent group-hover:from-primary/40 transition-all animate-pulse" />
               </div>
-            </a>
-            <a href="/products?category=women" className="group" ref={(el) => { categoryCardRefs.current[1] = el; }}>
+            </Link>
+            <Link to="/products?category=women" className="group" ref={(el) => { categoryCardRefs.current[1] = el; }}>
               <div className="glass-effect rounded-2xl p-8 sm:p-12 hover-scale transition-all h-60 sm:h-80 flex items-center justify-center relative overflow-hidden">
                 <div className="text-center z-10">
                   <h3 className="text-4xl sm:text-5xl font-bold mb-4 sm:mb-6 tech-text-gradient">Women&apos;s</h3>
@@ -390,7 +391,7 @@ const Home = () => {
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-br from-secondary/20 to-transparent group-hover:from-secondary/40 transition-all animate-pulse" />
               </div>
-            </a>
+            </Link>
           </div>
         </div>
       </section>
